@@ -6,7 +6,10 @@ print("Counting forward from 1 to 10:")
 for x in range(1,11):
     print(x)
 print("")
-# e.g 2: count 10 to 1 in reverse
+
+#e.g 2: count 10 to 1 in reverse
 print("Counting reverse from 1 to 10:")
 for x in reversed(range(1, 11)):
     print(x)
+print("")
+    
