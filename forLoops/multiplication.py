@@ -1,4 +1,6 @@
-num = int(input("Enter a number: "))
-print(f"The multiplication of {num} from 1 to 10:")
+# Multiplication of a number from 1 to 10
+
+number = int(input("Enter a number : "))
+
 for i in range(1,11):
-    print(f"{num} x {i} : {num * i}")
+    print(f"{number} x {i} = {number * i}")
