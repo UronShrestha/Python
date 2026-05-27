@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Good Night Drawing</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #000;
+        overflow: hidden;
+        font-family: "Pacifico", cursive;
+      }
+
+      .container {
+        position: relative;
+        width: 400px;
+        height: 700px;
+        background: #000;
+      }
+
+      /* Neon Text */
+      .good {
+        position: absolute;
+        top: 40px;
+        left: 40px;
+        color: white;
+        font-size: 70px;
+        transform: rotate(-5deg);
+        text-shadow:
+          0 0 5px red,
+          0 0 10px red,
+          0 0 20px red,
+          0 0 40px red;
+      }
+
+      .night {
+        position: absolute;
+        top: 120px;
+        right: 40px;
+        color: white;
+        font-size: 70px;
+        transform: rotate(12deg);
+        text-shadow:
+          0 0 5px red,
+          0 0 10px red,
+          0 0 20px red,
+          0 0 40px red;
+      }
+
+      .heart {
+        position: absolute;
+        top: 220px;
+        right: 70px;
+        color: white;
+        font-size: 45px;
+        transform: rotate(10deg);
+        text-shadow:
+          0 0 5px red,
+          0 0 10px red,
+          0 0 20px red,
+          0 0 40px red;
+      }
+
+      /* Stickman */
+      .head {
+        position: absolute;
+        top: 250px;
+        left: 110px;
+        width: 170px;
+        height: 170px;
+        border: 5px solid white;
+        border-radius: 50%;
+      }
+
+      .eye {
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        background: white;
+        border-radius: 50%;
+        top: 70px;
+      }
+
+      .eye.left {
+        left: 45px;
+      }
+
+      .eye.right {
+        right: 45px;
+      }
+
+      .mouth {
+        position: absolute;
+        width: 70px;
+        height: 6px;
+        background: white;
+        border-radius: 10px;
+        bottom: 45px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      /* Body */
+      .body {
+        position: absolute;
+        top: 420px;
+        left: 195px;
+        width: 4px;
+        height: 180px;
+        background: white;
+      }
+
+      /* Arms */
+      .arm-left,
+      .arm-right {
+        position: absolute;
+        width: 90px;
+        height: 4px;
+        background: white;
+        top: 455px;
+      }
+
+      .arm-left {
+        left: 115px;
+        transform: rotate(-35deg);
+        transform-origin: right center;
+      }
+
+      .arm-right {
+        left: 195px;
+        transform: rotate(35deg);
+        transform-origin: left center;
+      }
+
+      /* Legs */
+      .leg-left,
+      .leg-right {
+        position: absolute;
+        width: 90px;
+        height: 4px;
+        background: white;
+        top: 600px;
+      }
+
+      .leg-left {
+        left: 120px;
+        transform: rotate(-55deg);
+        transform-origin: right center;
+      }
+
+      .leg-right {
+        left: 195px;
+        transform: rotate(55deg);
+        transform-origin: left center;
+      }
+
+      /* Flower */
+      .flower {
+        position: absolute;
+        top: 333px;
+        left: 262px;
+        font-size: 90px;
+      }
+
+      .stem {
+        position: absolute;
+        width: 5px;
+        height: 120px;
+        background: #2ecc71;
+        top: 450px;
+        left: 285px;
+        transform: rotate(18deg);
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="good">Good</div>
+      <div class="night">Night</div>
+      <div class="heart">♡</div>
+
+      <!-- Stickman -->
+      <div class="head">
+        <div class="eye left"></div>
+        <div class="eye right"></div>
+        <div class="mouth"></div>
+      </div>
+
+      <div class="body"></div>
+
+      <div class="arm-left"></div>
+      <div class="arm-right"></div>
+
+      <div class="leg-left"></div>
+      <div class="leg-right"></div>
+
+      <!-- Flower -->
+      <div class="flower">🌸</div>
+      <div class="stem"></div>
+    </div>
+  </body>
+</html>
