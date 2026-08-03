@@ -66,16 +66,17 @@ while True:
                 while True:
                     student = input("\nEnter name of a student to search in list : ").capitalize()
                     if student in students:
-                        print(f"========== Student named {student} is available in list. ==========")
-                        print("========== List of Student's in the list!!! ==========")
+                        print(f"\n========== Student named {student} is available in list. ==========")
+                        print("\n========== List of Student's in the list!!! ==========")
                         for index, student in enumerate(students, start=1):
                             print(f"{index}. {student}")
                     else:
-                        print(f"========== Student named {student} is not available in list. ==========")
+                        print(f"\n========== Student named {student} is not available in list. ==========")
                     break
+
 #Remove Student
 
-    if choice == "4":
+    elif choice == "4":
         if len(students) == 0:
             print("\n========== No Students in List!!! ==========")
         else:
@@ -84,18 +85,28 @@ while True:
                 if student in students:
                     students.remove(student)
                     print(f"\n========== Student named {student} removed from the List!!! ==========")
-                    print("========== List of New Students!!! ==========")
+                    print("\n========== List of New Students!!! ==========")
                     for index, student in enumerate(students, start=1):
                         print(f"{index}. {student}")
                 else:
                     print(f"\n========== Student named {student} is not in the List!!! ==========")
-                    print("========== List of Students!!! ==========")
+                    print("\n========== List of Students!!! ==========")
                     for index, student in enumerate(students, start=1):
                         print(f"{index}. {student}")
+                break
+
+#Sort Students
+    elif choice == "5":
+        if len(students) == 0:
+            print("\n========== No Students in List!!! ==========")
+        else:
+            students.sort()
+            print("\n========== Sorted List of Students!!! ==========")
+            for index, student in enumerate(students, start=1):
+                                    print(f"{index}. {student}")
+            
 
 
-         
-    # if choice == "5"
     # if choice == "6"
     # if choice == "7"
 
