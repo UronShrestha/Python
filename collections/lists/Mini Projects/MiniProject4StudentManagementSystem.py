@@ -36,7 +36,7 @@ while True:
 # Add Student
     if choice == "1":
         while True:
-            add_student = input("Enter name of a student : ").capitalize()
+            add_student = input("\nEnter name of a student : ").capitalize()
             if add_student == "":
                 print("========== Please Enter Student's Name!!! ==========")
                 continue
@@ -54,8 +54,24 @@ while True:
         else:
             for index, add_student in enumerate(students, start=1):
                 print(f"{index}. {add_student}")
+
+
+#Search Student
         
-    # if choice == "3"
+    elif choice == "3":            
+            if len(students) == 0:
+                print("\n========== No Students in List!!! ==========")
+            else:
+                while True:
+                    student = input("\nEnter name of a student to search in list : ").capitalize()
+                    if student in students:
+                        for index, add_student in enumerate(students, start=1):
+                                        print(f"{index}. {add_student}")
+                        print(f"========== Student named {student} is available in list. ==========")
+                    else:
+                        print(f"========== Student named {student} is not available in list. ==========")
+    #Remove Student
+
     # if choice == "4"
     # if choice == "5"
     # if choice == "6"
