@@ -106,8 +106,22 @@ while True:
                                     print(f"{index}. {student}")
             
 
+#Count Students
+    elif choice == "6":
+        count = 0
+        if len(students) == 0:
+            print("\n========== No Students in List!!! ==========")
+        else:
+            #  print("Number of students : ",len(students))
+            for student in students:
+             count+=1
+             print("\nNumber of students : ",count)
+             
 
-    # if choice == "6"
-    # if choice == "7"
+
+    elif choice == "7":
+        print("\n========== THANK YOU!!! ==========")
+        print()
+    break
 
 
