@@ -36,14 +36,14 @@ while True:
 # Add Student
     if choice == "1":
         while True:
-            add_student = input("\nEnter name of a student : ").capitalize()
-            if add_student == "":
+            student = input("\nEnter name of a student : ").capitalize()
+            if student == "":
                 print("========== Please Enter Student's Name!!! ==========")
                 continue
 
             else:
-                print(f"========== New Student '{add_student}' Added Successfully!!! ==========")
-                students.append(add_student)
+                print(f"========== New Student '{student}' Added Successfully!!! ==========")
+                students.append(student)
 
             break
 
@@ -52,8 +52,9 @@ while True:
         if len(students) == 0:
             print("\n========== No Students!!! ==========")
         else:
-            for index, add_student in enumerate(students, start=1):
-                print(f"{index}. {add_student}")
+            print("========== List of Student's Name!!! ==========")
+            for index, student in enumerate(students, start=1):
+                print(f"{index}. {student}")
 
 
 #Search Student
@@ -65,14 +66,35 @@ while True:
                 while True:
                     student = input("\nEnter name of a student to search in list : ").capitalize()
                     if student in students:
-                        for index, add_student in enumerate(students, start=1):
-                                        print(f"{index}. {add_student}")
                         print(f"========== Student named {student} is available in list. ==========")
+                        print("========== List of Student's in the list!!! ==========")
+                        for index, student in enumerate(students, start=1):
+                            print(f"{index}. {student}")
                     else:
                         print(f"========== Student named {student} is not available in list. ==========")
-    #Remove Student
+                    break
+#Remove Student
 
-    # if choice == "4"
+    if choice == "4":
+        if len(students) == 0:
+            print("\n========== No Students in List!!! ==========")
+        else:
+            while True:
+                student = input("\nEnter name of a student to remove from the list : ").capitalize()
+                if student in students:
+                    students.remove(student)
+                    print(f"\n========== Student named {student} removed from the List!!! ==========")
+                    print("========== List of New Students!!! ==========")
+                    for index, student in enumerate(students, start=1):
+                        print(f"{index}. {student}")
+                else:
+                    print(f"\n========== Student named {student} is not in the List!!! ==========")
+                    print("========== List of Students!!! ==========")
+                    for index, student in enumerate(students, start=1):
+                        print(f"{index}. {student}")
+
+
+         
     # if choice == "5"
     # if choice == "6"
     # if choice == "7"
