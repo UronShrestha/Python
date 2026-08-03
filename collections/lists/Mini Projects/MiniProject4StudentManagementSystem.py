@@ -17,12 +17,9 @@ Requirements
 
 students = []
 
-for i in range(3):
-    student = input(f"Enter name of student{i+1} : ")
-    students.append(student)
-
-for index, student in enumerate(students, start=1):
-    print(f"{index}. {student}")
+# for i in range(3):
+#     student = input(f"Enter name of student{i+1} : ")
+#     students.append(student)
 
 while True:
     print("\n========== Student Management Menu ==========")
@@ -36,23 +33,28 @@ while True:
 
     choice = input("\nChoose option between 1 to 7 : ")
 
+# Add Student
     if choice == "1":
         while True:
-            add_student = input("Enter name of a student : ")
+            add_student = input("Enter name of a student : ").capitalize()
             if add_student == "":
                 print("========== Please Enter Student's Name!!! ==========")
                 continue
 
             else:
-                print("========== New Student Added Successfully!!! ==========")
-
+                print(f"========== New Student '{add_student}' Added Successfully!!! ==========")
                 students.append(add_student)
-                for index, add_student in enumerate(students, start=1):
-                    print(f"{index}. {add_student}")
 
             break
 
-    # if choice == "2"
+# View Students
+    elif choice == "2":
+        if len(students) == 0:
+            print("\n========== No Students!!! ==========")
+        else:
+            for index, add_student in enumerate(students, start=1):
+                print(f"{index}. {add_student}")
+        
     # if choice == "3"
     # if choice == "4"
     # if choice == "5"
