@@ -41,20 +41,41 @@ while True:
                 print("========== Please Enter Student's Name!!! ==========")
                 continue
 
-            else:
-                print(f"========== New Student '{student}' Added Successfully!!! ==========")
-                students.append(student)
+            elif student in students:
+                 print(f"{student} already exists in the list.")
+                 continue
+
+            while True:
+                try:
+                    mark = float(input("\nEnter mark of a student : ").capitalize())
+                    if mark < 0 or mark > 100:
+                        print("========== Marks must be between 0 and 100! ==========")
+                        continue
+
+                    break
+                except ValueError:
+                    print("========== Only integers or floats are allowed! ==========")
+
+            print(f"========== New Student '{student}' Added Successfully!!! ==========")
+            students.append([student, mark])
 
             break
 
 # View Students
     elif choice == "2":
-        if len(students) == 0:
-            print("\n========== No Students!!! ==========")
+        if not students:
+            print("\n========== No Students Available! ==========")
         else:
-            print("========== List of Student's Name!!! ==========")
+            print("\n+-----+----------------------+-------+")
+            print("            LIST OF STUDENTS |")
+            print("\n+-----+----------------------+-------+")
+            print("| No. | Name                 | Marks |")
+            print("+-----+----------------------+-------+")
+
             for index, student in enumerate(students, start=1):
-                print(f"{index}. {student}")
+                print(f"| {index:<3} | {student[0]:<20} | {student[1]:<5} |")
+
+            print("+-----+----------------------+-------+")
 
 
 #Search Student
@@ -65,7 +86,11 @@ while True:
             else:
                 while True:
                     student = input("\nEnter name of a student to search in list : ").capitalize()
-                    if student in students:
+                    if student == "":
+                        print("Please enter a name.")
+                        continue
+                    
+                    elif student in students:
                         print(f"\n========== Student named {student} is available in list. ==========")
                         print("\n========== List of Student's in the list!!! ==========")
                         for index, student in enumerate(students, start=1):
@@ -82,18 +107,20 @@ while True:
         else:
             while True:
                 student = input("\nEnter name of a student to remove from the list : ").capitalize()
-                if student in students:
+                if student == "":
+                     print("Please enter a name!!!")
+                     continue
+                elif student in students:
                     students.remove(student)
                     print(f"\n========== Student named {student} removed from the List!!! ==========")
                     print("\n========== List of New Students!!! ==========")
                     for index, student in enumerate(students, start=1):
                         print(f"{index}. {student}")
+                    break
+                    
                 else:
                     print(f"\n========== Student named {student} is not in the List!!! ==========")
-                    print("\n========== List of Students!!! ==========")
-                    for index, student in enumerate(students, start=1):
-                        print(f"{index}. {student}")
-                break
+                    
 
 #Sort Students
     elif choice == "5":
@@ -115,13 +142,16 @@ while True:
             #  print("Number of students : ",len(students))
             for student in students:
              count+=1
-             print("\nNumber of students : ",count)
+        print("\nNumber of students : ",count)
              
 
 
     elif choice == "7":
         print("\n========== THANK YOU!!! ==========")
-        print()
-    break
+        break
+
+    else:
+         print("Invalid Choice!!!")
+    # break
 
 
