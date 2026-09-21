@@ -20,6 +20,7 @@ Menu
 
 students = set()
 
+
 while True:
     print("\n========== ATTENDANCE SYSTEM ==========")
     print("1. Add Student")
@@ -62,7 +63,8 @@ while True:
 # 3. Check Student
     elif choice == "3":
         while True:
-            student = input("Enter name of student : ").capitalize()
+            student = input("\nEnter name of student to check : ").strip().capitalize()
+
             if student=="":
                 print("========== Please Enter Student's Name!!! ==========")
                 continue
@@ -72,13 +74,47 @@ while True:
             else:
                 print(f"{student} is not present in the set.")
             
+# 4. Remove Student
+    elif choice == "4":
+        while True:
+            if len(students) == 0:
+                print("========== No Student Available!!! ==========")
 
+            student = input("\nEnter name of student to remove : ").strip().capitalize()
 
+            if student == "":
+                print("========== Please Enter Student's Name!!! ==========")
+                continue
+            elif student not in students:
+                print(f"{student} is not in set!!!")
+                continue
+            else:
+                students.remove(student)
+                print(f"=========={student} removed successfully!!! ==========")
+                print(f"\n========== New Student Set ==========")
+                for student in students:
+                    print(student)
+            break
+                
 
-    # elif choice == "":
-    # elif choice == "":
+# 5. Count Students
+
+    elif choice == "5":
+       if len(students) == 0:
+                print(f"\n========== No Students in Set ==========")
+           
+    #    count_students = 0
+    #    for student in students:
+    #     count_students+=1
+
+       print("Number of students : ", len(students))
+# 6. Exit
 
     elif choice == "6":
         print("EXIT SUCCESSFULL!!!")
+        break
+    
+         
     else:
         print("INVALID CHOICE!!!")
+        continue
