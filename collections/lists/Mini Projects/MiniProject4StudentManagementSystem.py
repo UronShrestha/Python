@@ -130,7 +130,7 @@ while True:
             students.sort()
             print("\n========== Sorted List of Students!!! ==========")
             for index, student in enumerate(students, start=1):
-                                    print(f"{index}. {student}")
+                print(f"{index}. {student}")
             
 
 #Count Students
